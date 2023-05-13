@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Thickness x:Key="FixedMarginRight">10,0,0,0</Thickness>
+    <Thickness x:Key="FixedMarginUp">0,0,0,0</Thickness>
+    <Thickness x:Key="FixedMarginDown">0,30,0,0</Thickness>
+    <BitmapImage x:Key="Ascending" UriSource="pack://application:,,,/Resources/ascending button icon.png" />
+    <BitmapImage x:Key="Descending" UriSource="pack://application:,,,/Resources/descending button icon.png" />
+
+    
+</ResourceDictionary>

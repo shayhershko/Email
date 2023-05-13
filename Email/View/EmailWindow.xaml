@@ -1,0 +1,92 @@
+﻿<mah:MetroWindow x:Class="Email.View.EmailWindow"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Email.View"
+        xmlns:vms="clr-namespace:Email.ViewModel"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:local1="clr-namespace:Email.UserControls.View" xmlns:local2="clr-namespace:Email.Classes"
+                 TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        ResizeMode="CanMinimize"
+        FontFamily="{materialDesign:MaterialDesignFont}"
+        Height="700" Width="1000" Icon="/Resources/mail.jpg" 
+                 >
+    <Window.DataContext>
+        <vms:EmailViewModel/>
+    </Window.DataContext>
+
+
+    <Grid Margin="30,0,0,0"   >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--progras bar-->
+        <local1:ProgressBarControl   
+                                    Grid.ColumnSpan="2"         
+                                    VerticalAlignment="Center" 
+                                    HorizontalAlignment="Center"
+                                    Panel.ZIndex="1"     
+                                    Margin="0,0,0,200"
+                                    Visibility="{Binding ProgressBarVisible }" />
+
+        <Grid Grid.Column="0" Margin="{StaticResource FixedMarginDown}" IsEnabled="{Binding IsOverlayVisible}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <!--search bar-->
+            <Grid Grid.Row="0" IsEnabled="{Binding IsOverlayVisible}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <local1:SearchBarControl Grid.Column="0"   />
+                <local1:GridOrderButton  Grid.Column="1"    
+                                         Height="38" 
+                                         Width="55"
+                                         />
+            </Grid>
+
+
+            <!--list of emails-->
+            <local1:EmailGrid Grid.Column="0" 
+                              Grid.Row="1" 
+                              Margin="0,30,0,30"
+                              />
+        </Grid>
+
+
+        <Grid Grid.Column="1" IsEnabled="{Binding IsOverlayVisible}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <!--selected email headlines-->
+            <local1:EmailHeadLines Grid.Row="0" 
+                                   Margin="30,30,30,0"                                    
+                                   />
+
+            <!--Email Body-->
+            <materialDesign:ColorZone Grid.Row="1"
+                                      VerticalAlignment="Stretch"
+                                      Panel.ZIndex="1"
+                                      materialDesign:ElevationAssist.Elevation="Dp2"
+                                      CornerRadius="2"
+                                      Margin="30,30,30,30">
+
+                <Label Content="{Binding SelectedMail.Body}" Padding="15,10,15,20"  />
+            </materialDesign:ColorZone>
+
+        </Grid>
+
+
+    </Grid>
+</mah:MetroWindow>

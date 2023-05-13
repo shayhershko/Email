@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\ascending button icon.png" />
+    <None Remove="Resources\descending button icon.png" />
+    <None Remove="Resources\face_1.jpg" />
+    <None Remove="Resources\image1.jpg" />
+    <None Remove="Resources\image10.jpg" />
+    <None Remove="Resources\image2.jpg" />
+    <None Remove="Resources\image3.jpg" />
+    <None Remove="Resources\image4.jpg" />
+    <None Remove="Resources\image5.jpg" />
+    <None Remove="Resources\image6.jpg" />
+    <None Remove="Resources\image7.jpg" />
+    <None Remove="Resources\image8.jpg" />
+    <None Remove="Resources\image9.jpg" />
+    <None Remove="View\mail.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
+    <PackageReference Include="MahApps.Metro" Version="2.4.9" />
+    <PackageReference Include="MaterialDesignColors" Version="2.1.4" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.8.1" />
+    <PackageReference Include="ShowMeTheXAML.MSBuild" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\ascending button icon.png" />
+    <Resource Include="Resources\descending button icon.png" />
+    <Resource Include="Resources\image1.jpg" />
+    <Resource Include="Resources\image10.jpg" />
+    <Resource Include="Resources\image2.jpg" />
+    <Resource Include="Resources\image3.jpg" />
+    <Resource Include="Resources\image4.jpg" />
+    <Resource Include="Resources\image5.jpg" />
+    <Resource Include="Resources\image6.jpg" />
+    <Resource Include="Resources\image7.jpg" />
+    <Resource Include="Resources\image8.jpg" />
+    <Resource Include="Resources\image9.jpg" />
+    <Resource Include="Resources\mail.jpg" />
+  </ItemGroup>
+
+</Project>
